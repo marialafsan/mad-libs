@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title>Challenge: Mad Libs</title>
+  <style>
+      .word-type{
+          font-family:"arial";
+          font-size: 18px;
+          font-weight: bolder;
+          color: rgb(0, 132, 184);
+      }
+      h1{
+          font-family:"Tahoma";
+          color: rgb(0, 78, 168);
+      }
+      .small{
+          font-family:"Consolas";
+          font-size: 12px;
+      }
+      
+  </style>
+ </head>
+ <body>
+ 
+    <h1>Mad Libs</h1>
+     
+    <ul>
+    <li><span class="word-type"><strong>name</strong></span><br>
+        &nbsp&nbsp&nbsp&nbsp <i></i>
+        &nbsp&nbsp&nbsp<input type="text" id="name"><br>
+        &nbsp&nbsp&nbsp<i>Their gender is </i>&nbsp<select name ="gender" id="gender">
+            <option value="female">female</option>
+            <option value="male">male</option>
+            <option value="other">other</option>
+    </select></li>
+    
+      <li><span class="word-type"><strong>noun</strong></span><br>
+        &nbsp&nbsp&nbsp&nbsp <i>Object you can sit on</i>&nbsp&nbsp<input type="text" id="noun1"></li>
+        
+      <li><span class="word-type"><strong>noun</strong></span><br>
+        &nbsp&nbsp&nbsp&nbsp <i>Object not found in nature</i>&nbsp&nbsp<input type="text" id="noun2"></li>
+        
+      <li><span class="word-type"><strong>place</strong></span><br>
+        &nbsp&nbsp&nbsp&nbsp <i>A calm place with fresh air </i><br>&nbsp&nbsp&nbsp<span class="small"><i>(Eg: "the beach", "a boat" or "Barcelona") </i></span> &nbsp&nbsp<input type="text" id="place"></li>
+        
+      <li><span class="word-type"><strong>adjective</strong></span><br>
+        &nbsp&nbsp&nbsp&nbsp <i>Not a nice quality</i>&nbsp&nbsp<input type="text" id="nasty"></li>
+      <li><span class="word-type"><strong>adjective</strong></span><br>
+        &nbsp&nbsp&nbsp&nbsp <i>Your choice </i>&nbsp&nbsp<input type="text" id="adj"></li>
+      
+    </ul>
+     
+    <button id="lib-button">Lib it!</button>
+      
+    <p>Generated story: 
+    <span id="story"></span>
+    </p>
+ 
+    <script>
+        var libButton = document.getElementById('lib-button');
+        var libIt = function() {
+            var storyDiv = document.getElementById("story");
+            
+            var name = document.getElementById("name").value;
+            var gender = document.getElementById("gender").value;
+            var chair = document.getElementById("noun1").value;
+            var pin = document.getElementById("noun2").value;
+            var place = document.getElementById("place").value;
+            var nasty = document.getElementById("nasty").value;
+            var nice = document.getElementById("adj").value;
+            
+            var she = "they";
+            var her = "them";
+            var herself = "themselves";
+            
+            if (gender === "female"){
+                she = "she";
+                her = "her";
+                herself = "herself";
+            } else if (gender === "male") {
+                she = "he";
+                her = "him";
+                herself = "himself";
+            };
+            
+            storyDiv.innerHTML = "<br><br> Finding " + herself + " lost in " + place + ", " + name + " kept walking forward. " + name + " got really exhausted, and felt uneasy surrounded by the long shadows of the late afternoon. Then, " + she + " took a bite of a " + nasty + " energy bar " + she + " found resting in the depths of " + her + " pockets. A huge " + nice + " " + chair + " was a few steps away. " + name + " sat on that " + chair + ". <br> 'Ouch!!' -" + she + " yelled. <br> A huge " + pin + " had stabbed " + her + " in " + her + " butt!!" ;
+        
+            
+        };
+        libButton.addEventListener('click', libIt);
+        
+    </script>
+  
+ </body>
+</html>
