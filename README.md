@@ -4,7 +4,8 @@ Website containing a form asking the user for words to fill a story with a humor
 
 ## Why
 
-> Showcase of the use of JavaScript to develop an interactive page through the use of a form. To practice **the use of DOM variables and event listener functions**, **modification of the DOM elements**, **processing forms with events**, **modification of the style of the page through JavaScript** and Git and GitHub **version control**.
+> Showcase of the use of JavaScript to develop an interactive page through the use of a form. 
+> To practice **the use of DOM variables and event listener functions**, **modification of the DOM elements**, **processing forms with events**, **modification of the style of the page through JavaScript** and Git and GitHub **version control**.
 > Additionally, the page should look cleaner through the **use of CSS**.
 
 ## Roadmap
