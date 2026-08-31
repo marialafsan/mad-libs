@@ -1,6 +1,8 @@
 # mad-libs
 
-Website containing a form asking the user for words to fill a story with a humoristic outcome.
+Game of Mad-Libs
+
+Website containing a form asking the user for words to fill a story with a humoristic outcome
 
 ## Why
 
