@@ -1,17 +1,25 @@
-# mad-libs
+# Mad-Libs
 
-Website containing a form asking the user for words to fill a story with a humoristic outcome.
+Webpage that allows the user to play a game of Mad-Libs, developed using **HTML** and **JavaScript**
 
 ## Why
 
-> Showcase of the use of JavaScript to develop an interactive page through the use of a form. To practice **the use of DOM variables and event listener functions**, **modification of the DOM elements**, **processing forms with events**, **modification of the style of the page through JavaScript** and Git and GitHub **version control**.
-> Additionally, the page should look cleaner through the **use of CSS**.
+> Showcase of the use of JavaScript to develop an interactive page through the use of a form.
+
+> To practice:
+>
+>  - The use of **DOM variables** and **event listener functions**
+>  - Modification of the DOM elements
+>  - Processing **forms with events**
+>  - Modification of the style of the page through the use of **JavaScript**
+>  - Git and GitHub **version control**
+
 
 ## Roadmap
 
 ### *Features*
 
-> - [ ] **First steps:** First version of the page with minimal styling
+> - [x] **First steps:** First version of the page with minimal styling
 > - [ ] **CSS & HTML:** Structure and positioning of the elements for a cleaner look 
 > - [ ] To be defined
 
