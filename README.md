@@ -32,3 +32,13 @@ Webpage that allows the user to play a game of Mad-Libs, developed using **HTML*
 >    - [ ] Box elements
 >    - [ ] Buttons
 > - [ ] **DOM manipulation** to create the transition effect
+
+
+## Layouts
+
+### Design 01
+
+![design 01](design-concepts/layout-design-01.png)
+
+
+
