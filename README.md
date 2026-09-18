@@ -20,4 +20,15 @@ Webpage that allows the user to play a game of Mad-Libs, developed using **HTML*
 ### *Features*
 
 > - [x] **First steps:** First version of the page with minimal styling
-> - [ ] **CSS & HTML:** Structure and positioning of the elements for a cleaner look 
+> - [ ] **Layout design**
+> - [ ] **HTML boxes**. Structure of the content
+> - [ ] **CSS positioning**
+> - [ ] **CSS styling**
+
+### *Enhancements*
+
+> - [ ] **Dynamic design concept definition**
+> - [ ] **Addition of the new *hidden* elements in HTML**
+>    - [ ] Box elements
+>    - [ ] Buttons
+> - [ ] **DOM manipulation** to create the transition effect
