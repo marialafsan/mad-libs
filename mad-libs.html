@@ -4,23 +4,64 @@
         <meta charset="utf-8" />
         <title>Challenge: Mad Libs</title>
 
+        <!-- Importing font-families from Google Fonts: "Fredoka"-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&display=swap" rel="stylesheet">
+
         <style>
 
+            body{
+
+                font-family:"Fredoka", sans-serif;
+                font-weight: 500;
+
+                /* Centered, filling the whole page */
+                margin:0;           
+                min-height:100vh;
+
+                display:flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 32px 16px;
+            }
+
+            h1{
+                color: #F1B57C;
+                font-weight: 600;
+            }
 
             .word-type{
-                font-family:"arial";
                 font-size: 18px;
                 font-weight: bolder;
                 color: rgb(0, 132, 184);
+                text-align: left;
             }
-            h1{
-                font-family:"Tahoma";
-                color: #F1B57C;
-            }
+            
             .small{
-                font-family:"Consolas";
                 font-size: 12px;
             }
+
+            #card01{
+                display:flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 10px;
+            }
+
+            #card02{
+                display:flex;
+                flex-direction: column;
+                justify-content: left;
+                padding: 10px;
+            }
+
+            #story{
+                text-align: left;
+            }
+
             
         </style>
     </head>
@@ -28,63 +69,73 @@
     <body>
 
         <h1>Mad Libs</h1>
-            
-        <ul>
-            <li>
-                <span class="word-type"><strong>name</strong></span>
-                <br>
-                <input type="text" id="name">
-                <br>
-                <i>and they are: </i>
-                <select name ="gender" id="gender">
-                    <option value="female">female</option>
-                    <option value="male">male</option>
-                    <option value="other">other</option>
-                </select>
-            </li>
+        
+        <div id="card01">
+            <ul>
+                <li>
+                    <span class="word-type"><strong>name</strong></span>
+                    <br>
+                    <input type="text" id="name">
+                    <br>
+                    <i>and they are: </i>
+                    <select name ="gender" id="gender">
+                        <option value="female">female</option>
+                        <option value="male">male</option>
+                        <option value="other">other</option>
+                    </select>
+                </li>
 
-            <li>
-                <span class="word-type"><strong>noun</strong></span>
-                <br>
-                <i>you could use this object as a chair</i><input type="text" id="noun1">
-            </li>
-            
-            <li>
-                <span class="word-type"><strong>noun</strong></span>
-                <br>
-                <i>man-made object</i>&nbsp&nbsp<input type="text" id="noun2">
-            </li>
-            
-            <li>
-                <span class="word-type"><strong>place</strong></span>
-                <br>
-                <i>outdoor space with fresh air </i>
-                <br>
-                <span class="small"><i>(Eg: "the beach", "a boat" or "Barcelona")</i></span>
-                <input type="text" id="place">
-            </li>
-            
-            <li>
-                <span class="word-type"><strong>adjective</strong></span>
-                <br>
-                <i>you'd find something described like this in the rubbish</i>
-                <input type="text" id="nasty">
-            </li>
-
-            <li>
-                <span class="word-type"><strong>adjective</strong></span>
-                <br>
-                <i>this would describe something you fancy</i>
-                <input type="text" id="adj">
-            </li>
+                <li>
+                    <span class="word-type"><strong>noun</strong></span>
+                    <br>
+                    <i>you could use this object as a chair</i>
+                    <br>
+                    <input type="text" id="noun1">
+                </li>
                 
-        </ul>
-            
-        <button id="lib-button">Lib it!</button>
-            
-        <p>Generated story: 
-        <span id="story"></span>
-        </p>
+                <li>
+                    <span class="word-type"><strong>noun</strong></span>
+                    <br>
+                    <i>man-made object</i>&nbsp&nbsp<input type="text" id="noun2">
+                </li>
+                
+                <li>
+                    <span class="word-type"><strong>place</strong></span>
+                    <br>
+                    <i>outdoor space with fresh air </i>
+                    <br>
+                    <span class="small"><i>(Eg: "the beach", "a boat" or "Barcelona")</i></span>
+                    <br>
+                    <input type="text" id="place">
+                </li>
+                
+                <li>
+                    <span class="word-type"><strong>adjective</strong></span>
+                    <br>
+                    <i>you'd find something described like this in the rubbish</i>
+                    <br>
+                    <input type="text" id="nasty">
+                </li>
+
+                <li>
+                    <span class="word-type"><strong>adjective</strong></span>
+                    <br>
+                    <i>this would describe something you fancy</i>
+                    <br>
+                    <input type="text" id="adj">
+                </li>
+                    
+            </ul>
+                
+            <button id="lib-button">Lib it!</button>
+        </div>
+        
+        <div id="card02">
+            <p>Your story here: 
+                <br>
+                Hello <span id="story"></span>
+            </p>
+        </div>
 
         <script>
             var libButton = document.getElementById('lib-button');
