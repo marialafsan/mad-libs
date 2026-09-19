@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Mad Libs Structure</title>
+
+        <!--Fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&display=swap" rel="stylesheet">
+
+        <style>
+
+            *{
+                box-sizing:border-box;
+            }
+
+            body {
+
+                /* Fonts and colors */
+                font-family: "Segoe UI", Tahoma, Arial, sans-serif;  /* body text */
+                color: #3A4A5A;
+                background: #ffffff;
+
+                margin: 0;
+                min-height: 100vh;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            #container{
+
+                background-color: rgb(245, 249, 255);
+                width:100%;
+
+                display: grid;
+                gap: 25px;
+                align-items: center;
+                justify-items: center;
+                padding: 20px 0;
+
+            }
+
+            #header{
+
+                /* Fonts and colors */
+                font-family: "Fredoka", sans-serif;
+                font-weight: 600;
+                font-size: 44px;
+                color: #F1B57C;
+
+                text-align:center;
+                margin-bottom:-10px;
+            }
+            
+
+            .card{
+
+                /* Fonts and colors */
+                background: #EAF0F8;
+                border: 1px solid #C7D3E0;
+                border-radius: 16px;
+
+                height:200px;
+                width:350px;
+            }
+
+            #card-1{
+                
+                display: flex;
+                flex-direction: column;
+                align-items:center;
+                justify-content: center;
+                padding:10px;
+            }
+
+            #card-2{
+               
+                /* Colors */
+                background: #F2EFF8;
+
+                padding: 0 20px;
+                
+            }
+
+            #card-2 h2{
+               
+                /* Fonts and colors */
+                font-family: "Fredoka", sans-serif;
+                font-weight: 600;
+                color: #5F7E9C;;
+                
+            }
+
+            #story{
+
+                /* Colors */
+                color: #F2EFF8;
+            }
+
+            #questions{
+
+                /* Fonts and colors */
+                background: #DCEAFB;
+                border: 1px solid #C7D3E0;
+                border-radius: 12px;
+
+                height: 100%;
+
+                display:flex;
+                align-items: center;
+                justify-content: center;
+
+                padding: 0 10px;
+            }
+
+            button{
+
+                /* Shape, fonts and colors */
+                font-family: "Fredoka", sans-serif;
+                font-weight: 600;
+                font-size: 18px;
+                color: #3A4A5A;
+                background: #DBE4EE;
+                border: none;
+                border-radius: 14px;
+
+                height:fit-content;
+                margin-top:10px;
+            }
+
+            /* Styling of the form contents */
+            input[type="text"],
+            select {
+                font-family: inherit;
+                color: #3A4A5A;
+                background: #fff;
+                border: 1.5px solid #C7D3E0;
+                border-radius: 11px;
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <div id="container">
+
+            <div id="header"> Hello </div>
+
+            <div class="card" id="card-1">
+                <div id="questions">bla bla bla</div>
+                <button id="button">Press me!</button>
+            </div>
+
+            <div class="card" id="card-2">
+                <h2>Story here:</h2>
+                <p><span id="story">balbalbal</span></p>
+            </div>
+
+        </div>
+    </body>
+
+</html>
