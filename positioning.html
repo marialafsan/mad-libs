@@ -194,7 +194,7 @@
                         <li>
                             <span class="word-type"><strong>noun</strong></span>
                             <br>
-                            <span class="descriptions"><em>you could use this object as a chair</em></span>
+                            <span class="descriptions"><em>you could rest on this</em></span>
                             <br>
                             <input type="text" id="noun1" placeholder="chair">
                         </li>
@@ -213,11 +213,9 @@
                             <span class="word-type"><strong>place</strong></span>
                             <br>
                             <span class="descriptions"><em>outdoor space with fresh air
-                                <br>
-                                (Eg: "the beach", "a boat" or "Barcelona")
                             </em></span>
                             <br>
-                            <input type="text" id="place" placeholder="the woods">
+                            <input type="text" id="place" placeholder="the woods, Barcelona...">
                         </li>
                         <br>
                         
@@ -252,16 +250,47 @@
 
         <script>
             var libButton = document.getElementById('button');
+
+            var cardEl = document.getElementById('card-1');
+
             var libIt = function() {
                 var storyDiv = document.getElementById("story");
                 
                 var name = document.getElementById("name").value;
+                <!--If the field is not filled:-->
+                    if (name === ""){
+                        name = "Jane Doe";
+                    }
+
                 var gender = document.getElementById("gender").value;
+                    if (gender === ""){
+                        gender = "female";
+                    }
+
                 var chair = document.getElementById("noun1").value;
+                    if (chair === ""){
+                        chair = "hammock";
+                    }
+
                 var pin = document.getElementById("noun2").value;
+                    if (pin === ""){
+                        pin = "toy car";
+                    }
+
                 var place = document.getElementById("place").value;
+                    if (place === ""){
+                        place = "the beach";
+                    }
+
                 var nasty = document.getElementById("nasty").value;
+                    if (nasty === ""){
+                        nasty = "mushy";
+                    }
+
                 var nice = document.getElementById("adj").value;
+                    if (nice === ""){
+                        nice = "nice and confortable";
+                    }
                 
                 var she = "they";
                 var her = "them";
@@ -276,10 +305,13 @@
                     her = "his";
                     herself = "himself";
                 };
-                
-                storyDiv.innerHTML = "<br><br> Finding " + herself + " lost in " + place + ", " + name + " kept walking forward. " + name + " got really exhausted, and felt uneasy surrounded by the long shadows of the late afternoon. Then, " + she + " took a bite of a " + nasty + " energy bar " + she + " found resting in the depths of " + her + " pockets. A huge " + nice + " " + chair + " was a few steps away. " + name + " sat on that " + chair + ". <br> 'Ouch!!' -" + she + " yelled. <br> A huge " + pin + " had stabbed " + her + " in " + her + " butt!!" ;
+
+                storyDiv.innerHTML = "<br><br> Finding " + herself + " lost in " + place + ", " + name + " kept walking forward. <br>"
+                + name + " got really exhausted, and felt uneasy surrounded by the long shadows of the late afternoon. <br>" 
+                + name + " took a bite of a " + nasty + " energy bar " + she + " found resting in the depths of " + her + " pockets. <br> Just a few steps away, " + she + " could see a confy " + nice + " " + chair + "<br>" 
+                + name + " sat on that " + chair + " and... <br> &nbsp &nbsp 'Ouch!!' -" + she + " yelled. <br> A " + pin + " had stabbed " + her + " in the bum!!" ;
             
-                
+
             };
             libButton.addEventListener('click', libIt);
             
