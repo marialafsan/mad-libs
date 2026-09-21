@@ -13,6 +13,8 @@ Webpage that allows the user to play a game of Mad-Libs, developed using **HTML*
 >  - Processing **forms with events**
 >  - Modification of the style of the page through the use of **JavaScript**
 >  - Git and GitHub **version control**
+>  - **Website Layout and style** using **CSS**
+>  - Git and GitHub **version control**
 
 
 ## Roadmap
