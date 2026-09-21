@@ -2,154 +2,297 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Challenge: Mad Libs</title>
+        <title> Mad Libs Game </title>
 
-        <!-- Importing font-families from Google Fonts: "Fredoka"-->
+        <!--Fonts-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&display=swap" rel="stylesheet">
 
         <style>
 
-            body{
-
-                font-family:"Fredoka", sans-serif;
-                color:darkslategrey;
-                font-weight: 500;
-
-                /* Centered, filling the whole page */
-                margin:0;           
-                min-height:100vh;
-
-                display:flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                /*padding: 32px 16px;*/
+            *{
+                box-sizing:border-box;
             }
 
-            h1{
-                color: #F1B57C;
+            body {
+
+                /* Fonts and colors */
+                font-family: "Fredoka", sans-serif;  /* body text */
+                font-weight: 500;
+                font-size: 18px;
+                color: #3A4A5A;
+                background: #ffffff;
+
+                margin: 0;
+                min-height: 100vh;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            #container{
+
+                width:100%;
+
+                display: grid;
+                gap: 25px;
+                align-items: center;
+                justify-items: center;
+                padding: 20px 0;
+
+            }
+
+            #header{
+
+                /* Fonts and colors */
+                font-family: "Fredoka", sans-serif;
                 font-weight: 600;
+                font-size: 50px;
+                color: #F1B57C;
+
+                text-align:center;
+                margin-bottom:-10px;
             }
 
             .word-type{
-                font-size: 18px;
-                font-weight: bolder;
-                color: rgb(0, 132, 184);
-                text-align: left;
+                color: #3A4A5A;
+                font-size: 20px;
             }
             
-            .small{
-                font-size: 12px;
+
+            .card{
+
+                /* Fonts and colors */
+
+                background: #DCEAFB;
+                border: 1px solid #C7D3E0;
+                border-radius: 12px; 
+
+                /* background: #EAF0F8;
+                border: 1px solid #C7D3E0;
+                border-radius: 16px; */
+
+                min-height:200px;
+                width:350px;
             }
 
-            #card01{
-                display:flex;
+            .descriptions{
+                font-size: 16px;
+            }
+
+            #card-1{
+
+                display: flex;
                 flex-direction: column;
+                align-items:center;
                 justify-content: center;
-                align-items: center;
-                padding: 10px;
+                padding:20px;
+
+                color:#5F7E9C
             }
 
-            #card02{
-                display:flex;
-                flex-direction: column;
-                justify-content: left;
-                padding: 10px;
+            #card-2{
+               
+                /* Fonts and colors */
+                background: #F2EFF8;
+                color: #5F7E9C;;
+                padding: 0 25px;
+
+                font-size: 20px;
+                
             }
 
             #story{
-                text-align: left;
+
+                /* Colors */
+                color: #3A4A5A;
+
+                font-size: 16px;
+                font-weight: 450;
+
             }
 
-            
+            #questions{
+
+                /* Fonts and colors */
+
+                /* background: #DCEAFB;
+                border: 1px solid #C7D3E0;
+                border-radius: 12px; */
+
+                height: 100%;
+
+            }
+
+            button{
+
+                /* Shape, fonts and colors */
+                font-family: "Fredoka", sans-serif;
+                font-weight: 600;
+                font-size: 18px;
+                color: #3A4A5A;
+                background: #DBE4EE;
+                
+                border: 1px solid #c3cedb;
+                border-radius: 14px;
+                padding:12px 50px;
+
+                height:fit-content;
+                margin-top:0px;
+            }
+
+            #restart{
+                /* Correcting the margin inherited from the positioning */
+                margin-top:-10px;
+            }
+
+            /* Styling of the form contents */
+            input[type="text"],
+            select {
+                font-family: inherit;
+                font-size: 18px;
+                color: #3A4A5A;
+                background: #fff;
+                border: 1.5px solid #C7D3E0;
+                border-radius: 6px;
+                padding:1px 1px;
+            }
+
+            /*Styling of the placeholders so they look like suggestions*/
+            input::placeholder {
+                color: #a4aebb77; 
+                font-style: italic;
+                
+            }
+
         </style>
     </head>
 
     <body>
 
-        <h1>Mad Libs</h1>
-        
-        <div id="card01">
-            <ul>
-                <li>
+        <div id="container">
+
+            <div id="header"> Mad Libs </div>
+
+            <div class="card" id="card-1">
+                <div id="questions">
+                    
                     <span class="word-type"><strong>name</strong></span>
                     <br>
-                    <input type="text" id="name">
+                    <input type="text" id="name" placeholder="Jane Doe">
                     <br>
-                    <i>and they are: </i>
+                    <span><em>and they are: </em></span>
                     <select name ="gender" id="gender">
                         <option value="female">female</option>
                         <option value="male">male</option>
                         <option value="other">other</option>
                     </select>
-                </li><br>
+                    <br>
+                    <br>
 
-                <li>
                     <span class="word-type"><strong>noun</strong></span>
                     <br>
-                    <i>you could use this object as a chair</i>
+                    <input type="text" id="noun1" placeholder="chair">
                     <br>
-                    <input type="text" id="noun1">
-                </li><br>
+                    <span class="descriptions"><em>you could rest on this</em></span>
+                    <br>
+                    <br>
                 
-                <li>
                     <span class="word-type"><strong>noun</strong></span>
+                    <br>                    
+                    <input type="text" id="noun2" placeholder="mechanical pen">
                     <br>
-                    <i>man-made object</i>&nbsp&nbsp<input type="text" id="noun2">
-                </li><br>
+                    <span class="descriptions"><em>small, man-made object</em></span>
+                    <br>
+                    <br>
                 
-                <li>
                     <span class="word-type"><strong>place</strong></span>
+                    <br>                    
+                    <input type="text" id="place" placeholder="the woods, Barcelona...">
                     <br>
-                    <i>outdoor space with fresh air </i>
-                    <br>
-                    <span class="small"><i>(Eg: "the beach", "a boat" or "Barcelona")</i></span>
-                    <br>
-                    <input type="text" id="place">
-                </li><br>
-                
-                <li>
-                    <span class="word-type"><strong>adjective</strong></span>
-                    <br>
-                    <i>you'd find something described like this in the rubbish</i>
-                    <br>
-                    <input type="text" id="nasty">
-                </li><br>
-
-                <li>
-                    <span class="word-type"><strong>adjective</strong></span>
-                    <br>
-                    <i>this would describe something you fancy</i>
-                    <br>
-                    <input type="text" id="adj">
-                </li>
+                    <span class="descriptions"><em>outdoor space with fresh air
+                    </em></span>
                     
-            </ul>
+                    <br>
+                    <br>
                 
-            <button id="lib-button">Lib it!</button>
-        </div>
-        
-        <div id="card02">
-            <p>Your story here: 
-                <br>
-                Hello <span id="story"></span>
-            </p>
+                    <span class="word-type"><strong>adjective</strong></span>
+                    <br>
+                    <input type="text" id="nasty" placeholder="smelly">
+                    <br>
+                    <span class="descriptions"><em>not nice</em></span>
+
+                    <br>
+                    <br>
+
+                    <span class="word-type"><strong>adjective</strong></span>
+                    <br>
+                    <input type="text" id="adj" placeholder="gold-plated">
+                    <br>
+                    <span class="descriptions"><em>something fancy</em></span>
+                    
+                    <br>
+                    <br>
+                    
+            </div>
+                <button id="button">Lib it!</button>
+            </div>
+
+            <div class="card" id="card-2">
+                <p><strong>Your story here: </strong>
+                    <span id="story"></span>
+                </p>
+            </div>
+
+            <button class="button" id="restart">Start Over</button>
+
         </div>
 
         <script>
-            var libButton = document.getElementById('lib-button');
+            var libButton = document.getElementById('button');
+
+            var cardEl = document.getElementById('card-1');
+
             var libIt = function() {
                 var storyDiv = document.getElementById("story");
                 
                 var name = document.getElementById("name").value;
+                <!--If the field is not filled:-->
+                    if (name === ""){
+                        name = "Jane Doe";
+                    }
+
                 var gender = document.getElementById("gender").value;
+                    if (gender === ""){
+                        gender = "female";
+                    }
+
                 var chair = document.getElementById("noun1").value;
+                    if (chair === ""){
+                        chair = "hammock";
+                    }
+
                 var pin = document.getElementById("noun2").value;
+                    if (pin === ""){
+                        pin = "toy car";
+                    }
+
                 var place = document.getElementById("place").value;
+                    if (place === ""){
+                        place = "the beach";
+                    }
+
                 var nasty = document.getElementById("nasty").value;
+                    if (nasty === ""){
+                        nasty = "mushy";
+                    }
+
                 var nice = document.getElementById("adj").value;
+                    if (nice === ""){
+                        nice = "nice and confortable";
+                    }
                 
                 var she = "they";
                 var her = "them";
@@ -164,14 +307,24 @@
                     her = "his";
                     herself = "himself";
                 };
-                
-                storyDiv.innerHTML = "<br><br> Finding " + herself + " lost in " + place + ", " + name + " kept walking forward. " + name + " got really exhausted, and felt uneasy surrounded by the long shadows of the late afternoon. Then, " + she + " took a bite of a " + nasty + " energy bar " + she + " found resting in the depths of " + her + " pockets. A huge " + nice + " " + chair + " was a few steps away. " + name + " sat on that " + chair + ". <br> 'Ouch!!' -" + she + " yelled. <br> A huge " + pin + " had stabbed " + her + " in " + her + " butt!!" ;
+
+                storyDiv.innerHTML = "<br><br> Finding " + herself + " lost in " + place + ", " + name + " kept walking forward. <br>"
+                + name + " got really exhausted, and felt uneasy surrounded by the long shadows of the late afternoon. <br>" 
+                + name + " took a bite of a " + nasty + " energy bar " + she + " found resting in the depths of " + her + " pockets. <br> Just a few steps away, " + she + " could see a confy " + nice + " " + chair + "<br>" 
+                + name + " sat on that " + chair + " and... <br> &nbsp &nbsp 'Ouch!!' -" + she + " yelled. <br> A " + pin + " had stabbed " + her + " in the bum!!" ;
             
-                
+
             };
             libButton.addEventListener('click', libIt);
+
+        /* Re-start Button */
+        var restartButton = document.getElementById("restart");
+
+        restartButton.addEventListener("click", function () {
+            location.reload();
+        });
             
         </script>
-
     </body>
+
 </html>
