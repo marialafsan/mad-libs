@@ -27,7 +27,9 @@ Webpage that allows the user to play a game of Mad-Libs, developed using **HTML*
 
 ### *Enhancements*
 
-> - [ ] **Dynamic design concept definition**
+> - [x] **Filler words in the story**
+> - [ ] **Re-start button**
+> - [ ] **Dynamic design with every question in a different card**
 > - [ ] **Addition of the new *hidden* elements in HTML**
 >    - [ ] Box elements
 >    - [ ] Buttons

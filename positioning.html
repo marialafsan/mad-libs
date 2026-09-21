@@ -99,6 +99,8 @@
                 background: #F2EFF8;
                 color: #5F7E9C;;
                 padding: 0 25px;
+
+                font-size: 20px;
                 
             }
 
@@ -144,6 +146,11 @@
 
                 height:fit-content;
                 margin-top:10px;
+            }
+
+            #restart{
+                /* Correcting the margin inherited from the initial button */
+                margin-top:-10px;
             }
 
             /* Styling of the form contents */
@@ -246,6 +253,8 @@
                 </p>
             </div>
 
+            <button class="button" id="restart">Start Over</button>
+
         </div>
 
         <script>
@@ -314,6 +323,13 @@
 
             };
             libButton.addEventListener('click', libIt);
+
+        /* Re-start Button */
+        var restartButton = document.getElementById("restart");
+
+        restartButton.addEventListener("click", function () {
+            location.reload();
+        });
             
         </script>
     </body>
