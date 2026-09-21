@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Mad Libs Game/title>
+        <title> Mad Libs Game </title>
 
         <!--Fonts-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,7 +49,7 @@
                 /* Fonts and colors */
                 font-family: "Fredoka", sans-serif;
                 font-weight: 600;
-                font-size: 44px;
+                font-size: 50px;
                 color: #F1B57C;
 
                 text-align:center;
@@ -88,7 +88,7 @@
                 flex-direction: column;
                 align-items:center;
                 justify-content: center;
-                padding:10px;
+                padding:20px;
 
                 color:#5F7E9C
             }
@@ -124,11 +124,6 @@
 
                 height: 100%;
 
-                display:flex;
-                align-items: center;
-                justify-content: center;
-
-                padding: 0 10px;
             }
 
             button{
@@ -145,11 +140,11 @@
                 padding:12px 50px;
 
                 height:fit-content;
-                margin-top:10px;
+                margin-top:0px;
             }
 
             #restart{
-                /* Correcting the margin inherited from the initial button */
+                /* Correcting the margin inherited from the positioning */
                 margin-top:-10px;
             }
 
@@ -183,66 +178,64 @@
 
             <div class="card" id="card-1">
                 <div id="questions">
-                    <ul>
-                        <li>
-                            <span class="word-type"><strong>name</strong></span>
-                            <br>
-                            <input type="text" id="name" placeholder="Jane Doe">
-                            <br>
-                            <span class="descriptions"><em>and they are: </em></span>
-                            <select name ="gender" id="gender">
-                                <option value="female">female</option>
-                                <option value="male">male</option>
-                                <option value="other">other</option>
-                            </select>
-                        </li>
-                        <br>
+                    
+                    <span class="word-type"><strong>name</strong></span>
+                    <br>
+                    <input type="text" id="name" placeholder="Jane Doe">
+                    <br>
+                    <span><em>and they are: </em></span>
+                    <select name ="gender" id="gender">
+                        <option value="female">female</option>
+                        <option value="male">male</option>
+                        <option value="other">other</option>
+                    </select>
+                    <br>
+                    <br>
 
-                        <li>
-                            <span class="word-type"><strong>noun</strong></span>
-                            <br>
-                            <span class="descriptions"><em>you could rest on this</em></span>
-                            <br>
-                            <input type="text" id="noun1" placeholder="chair">
-                        </li>
-                        <br>
-                        
-                        <li>
-                            <span class="word-type"><strong>noun</strong></span>
-                            <br>
-                            <span class="descriptions"><em>small, man-made object</em></span>
-                            <br>
-                            <input type="text" id="noun2" placeholder="mechanical pen">
-                        </li>
-                        <br>
-                        
-                        <li>
-                            <span class="word-type"><strong>place</strong></span>
-                            <br>
-                            <span class="descriptions"><em>outdoor space with fresh air
-                            </em></span>
-                            <br>
-                            <input type="text" id="place" placeholder="the woods, Barcelona...">
-                        </li>
-                        <br>
-                        
-                        <li>
-                            <span class="word-type"><strong>adjective</strong></span>
-                            <br>
-                            <span class="descriptions"><em>something you'd find in the rubbish would fit this description</em></span>
-                            <br>
-                            <input type="text" id="nasty" placeholder="smelly">
-                        </li>
-                        <br>
+                    <span class="word-type"><strong>noun</strong></span>
+                    <br>
+                    <input type="text" id="noun1" placeholder="chair">
+                    <br>
+                    <span class="descriptions"><em>you could rest on this</em></span>
+                    <br>
+                    <br>
+                
+                    <span class="word-type"><strong>noun</strong></span>
+                    <br>                    
+                    <input type="text" id="noun2" placeholder="mechanical pen">
+                    <br>
+                    <span class="descriptions"><em>small, man-made object</em></span>
+                    <br>
+                    <br>
+                
+                    <span class="word-type"><strong>place</strong></span>
+                    <br>                    
+                    <input type="text" id="place" placeholder="the woods, Barcelona...">
+                    <br>
+                    <span class="descriptions"><em>outdoor space with fresh air
+                    </em></span>
+                    
+                    <br>
+                    <br>
+                
+                    <span class="word-type"><strong>adjective</strong></span>
+                    <br>
+                    <input type="text" id="nasty" placeholder="smelly">
+                    <br>
+                    <span class="descriptions"><em>not nice</em></span>
 
-                        <li>
-                            <span class="word-type"><strong>adjective</strong></span>
-                            <br>
-                            <span class="descriptions"><em>something fancy</em></span>
-                            <br>
-                            <input type="text" id="adj" placeholder="gold-plated">
-                        </li>
-                    </ul>
+                    <br>
+                    <br>
+
+                    <span class="word-type"><strong>adjective</strong></span>
+                    <br>
+                    <input type="text" id="adj" placeholder="gold-plated">
+                    <br>
+                    <span class="descriptions"><em>something fancy</em></span>
+                    
+                    <br>
+                    <br>
+                    
             </div>
                 <button id="button">Lib it!</button>
             </div>
