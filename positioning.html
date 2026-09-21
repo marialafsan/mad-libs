@@ -58,18 +58,28 @@
 
             .word-type{
                 color: #3A4A5A;
+                font-size: 20px;
             }
             
 
             .card{
 
                 /* Fonts and colors */
-                background: #EAF0F8;
+
+                background: #DCEAFB;
                 border: 1px solid #C7D3E0;
-                border-radius: 16px;
+                border-radius: 12px; 
+
+                /* background: #EAF0F8;
+                border: 1px solid #C7D3E0;
+                border-radius: 16px; */
 
                 min-height:200px;
                 width:350px;
+            }
+
+            .descriptions{
+                font-size: 16px;
             }
 
             #card-1{
@@ -105,9 +115,10 @@
             #questions{
 
                 /* Fonts and colors */
-                background: #DCEAFB;
+
+                /* background: #DCEAFB;
                 border: 1px solid #C7D3E0;
-                border-radius: 12px;
+                border-radius: 12px; */
 
                 height: 100%;
 
@@ -126,8 +137,10 @@
                 font-size: 18px;
                 color: #3A4A5A;
                 background: #DBE4EE;
-                border: none;
+                
+                border: 1px solid #c3cedb;
                 border-radius: 14px;
+                padding:12px 50px;
 
                 height:fit-content;
                 margin-top:10px;
@@ -137,17 +150,19 @@
             input[type="text"],
             select {
                 font-family: inherit;
+                font-size: 18px;
                 color: #3A4A5A;
                 background: #fff;
                 border: 1.5px solid #C7D3E0;
-                border-radius: 11px;
+                border-radius: 6px;
+                padding:1px 1px;
             }
 
             /*Styling of the placeholders so they look like suggestions*/
-            input::value {
-                color: #B7BEC9; 
-                font-style: italic; 
-                opacity: 1;         
+            input::placeholder {
+                color: #a4aebb77; 
+                font-style: italic;
+                
             }
 
         </style>
@@ -167,7 +182,7 @@
                             <br>
                             <input type="text" id="name" placeholder="Jane Doe">
                             <br>
-                            <i>and they are: </i>
+                            <span class="descriptions"><em>and they are: </em></span>
                             <select name ="gender" id="gender">
                                 <option value="female">female</option>
                                 <option value="male">male</option>
@@ -179,7 +194,7 @@
                         <li>
                             <span class="word-type"><strong>noun</strong></span>
                             <br>
-                            <i>you could use this object as a chair</i>
+                            <span class="descriptions"><em>you could rest on this</em></span>
                             <br>
                             <input type="text" id="noun1" placeholder="chair">
                         </li>
@@ -188,7 +203,7 @@
                         <li>
                             <span class="word-type"><strong>noun</strong></span>
                             <br>
-                            <i>small, man-made object</i>
+                            <span class="descriptions"><em>small, man-made object</em></span>
                             <br>
                             <input type="text" id="noun2" placeholder="mechanical pen">
                         </li>
@@ -197,18 +212,17 @@
                         <li>
                             <span class="word-type"><strong>place</strong></span>
                             <br>
-                            <i>outdoor space with fresh air </i>
+                            <span class="descriptions"><em>outdoor space with fresh air
+                            </em></span>
                             <br>
-                            <span class="small"><i>(Eg: "the beach", "a boat" or "Barcelona")</i></span>
-                            <br>
-                            <input type="text" id="place" placeholder="the woods">
+                            <input type="text" id="place" placeholder="the woods, Barcelona...">
                         </li>
                         <br>
                         
                         <li>
                             <span class="word-type"><strong>adjective</strong></span>
                             <br>
-                            <i>you'd find something described like this in the rubbish</i>
+                            <span class="descriptions"><em>something you'd find in the rubbish would fit this description</em></span>
                             <br>
                             <input type="text" id="nasty" placeholder="smelly">
                         </li>
@@ -217,7 +231,7 @@
                         <li>
                             <span class="word-type"><strong>adjective</strong></span>
                             <br>
-                            <i>this would describe something you fancy</i>
+                            <span class="descriptions"><em>something fancy</em></span>
                             <br>
                             <input type="text" id="adj" placeholder="gold-plated">
                         </li>
@@ -227,7 +241,7 @@
             </div>
 
             <div class="card" id="card-2">
-                <p>Your story here: 
+                <p><strong>Your story here: </strong>
                     <span id="story"></span>
                 </p>
             </div>
@@ -236,16 +250,47 @@
 
         <script>
             var libButton = document.getElementById('button');
+
+            var cardEl = document.getElementById('card-1');
+
             var libIt = function() {
                 var storyDiv = document.getElementById("story");
                 
                 var name = document.getElementById("name").value;
+                <!--If the field is not filled:-->
+                    if (name === ""){
+                        name = "Jane Doe";
+                    }
+
                 var gender = document.getElementById("gender").value;
+                    if (gender === ""){
+                        gender = "female";
+                    }
+
                 var chair = document.getElementById("noun1").value;
+                    if (chair === ""){
+                        chair = "hammock";
+                    }
+
                 var pin = document.getElementById("noun2").value;
+                    if (pin === ""){
+                        pin = "toy car";
+                    }
+
                 var place = document.getElementById("place").value;
+                    if (place === ""){
+                        place = "the beach";
+                    }
+
                 var nasty = document.getElementById("nasty").value;
+                    if (nasty === ""){
+                        nasty = "mushy";
+                    }
+
                 var nice = document.getElementById("adj").value;
+                    if (nice === ""){
+                        nice = "nice and confortable";
+                    }
                 
                 var she = "they";
                 var her = "them";
@@ -260,10 +305,13 @@
                     her = "his";
                     herself = "himself";
                 };
-                
-                storyDiv.innerHTML = "<br><br> Finding " + herself + " lost in " + place + ", " + name + " kept walking forward. " + name + " got really exhausted, and felt uneasy surrounded by the long shadows of the late afternoon. Then, " + she + " took a bite of a " + nasty + " energy bar " + she + " found resting in the depths of " + her + " pockets. A huge " + nice + " " + chair + " was a few steps away. " + name + " sat on that " + chair + ". <br> 'Ouch!!' -" + she + " yelled. <br> A huge " + pin + " had stabbed " + her + " in " + her + " butt!!" ;
+
+                storyDiv.innerHTML = "<br><br> Finding " + herself + " lost in " + place + ", " + name + " kept walking forward. <br>"
+                + name + " got really exhausted, and felt uneasy surrounded by the long shadows of the late afternoon. <br>" 
+                + name + " took a bite of a " + nasty + " energy bar " + she + " found resting in the depths of " + her + " pockets. <br> Just a few steps away, " + she + " could see a confy " + nice + " " + chair + "<br>" 
+                + name + " sat on that " + chair + " and... <br> &nbsp &nbsp 'Ouch!!' -" + she + " yelled. <br> A " + pin + " had stabbed " + her + " in the bum!!" ;
             
-                
+
             };
             libButton.addEventListener('click', libIt);
             

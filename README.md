@@ -21,9 +21,9 @@ Webpage that allows the user to play a game of Mad-Libs, developed using **HTML*
 
 > - [x] **First steps:** First version of the page with minimal styling
 > - [x] **Layout design**
-> - [ ] **HTML boxes**. Structure of the content
-> - [ ] **CSS positioning**
-> - [ ] **CSS styling**
+> - [x] **HTML boxes**. Structure of the content
+> - [x] **CSS positioning**
+> - [x] **CSS styling**
 
 ### *Enhancements*
 
